@@ -3,20 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gift Aruchi Nwatuzie | Professional Webpage</title>
+  <title>Gift Aruchi Nwatuzie | Academic Profile</title>
   <style>
     :root{
-      --bg:#f4f7fb;
-      --surface:#ffffff;
-      --surface-soft:#f8fbff;
-      --text:#172033;
-      --muted:#5f708c;
-      --line:#d9e3f0;
-      --primary:#163d8f;
-      --primary-soft:#e9f0ff;
-      --accent:#2f6fe4;
-      --shadow:0 14px 40px rgba(20, 45, 93, 0.08);
-      --radius:20px;
+      --bg:#f4f4f4;
+      --card:#ffffff;
+      --text:#444;
+      --heading:#2f3b4a;
+      --muted:#6d7680;
+      --accent:#1f7a9a;
+      --line:#e4e4e4;
+      --shadow:0 8px 24px rgba(0,0,0,.06);
+      --radius:18px;
       --max-width:1180px;
     }
 
@@ -24,271 +22,231 @@
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--bg);
       color:var(--text);
-      background:
-        radial-gradient(800px 350px at left top, rgba(47,111,228,.08), transparent 60%),
-        radial-gradient(700px 350px at right top, rgba(22,61,143,.08), transparent 58%),
-        var(--bg);
-      line-height:1.7;
+      line-height:1.65;
     }
 
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
+    a{
+      color:var(--accent);
+      text-decoration:none;
+    }
+
+    a:hover{
+      text-decoration:underline;
+    }
+
     .container{
       width:min(var(--max-width), calc(100% - 32px));
       margin:0 auto;
     }
 
-    /* Top Navigation */
-    header{
+    /* top navigation */
+    .topbar{
+      background:#fff;
+      border-bottom:1px solid var(--line);
       position:sticky;
       top:0;
       z-index:1000;
-      background:rgba(255,255,255,.9);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid var(--line);
     }
 
-    .nav-wrap{
-      min-height:78px;
+    .topbar-inner{
+      min-height:72px;
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:20px;
-      padding:12px 0;
       flex-wrap:wrap;
     }
 
-    .brand{
-      display:flex;
-      flex-direction:column;
-      gap:2px;
-    }
-
-    .brand h1{
-      margin:0;
-      font-size:1.15rem;
-      line-height:1.2;
-      color:var(--primary);
-      letter-spacing:.01em;
-    }
-
-    .brand span{
-      color:var(--muted);
-      font-size:.92rem;
-      font-weight:600;
-    }
-
-    nav{
-      display:flex;
-      gap:18px;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:flex-end;
-    }
-
-    nav a{
-      color:var(--muted);
+    .site-name{
+      font-size:1.1rem;
       font-weight:700;
-      font-size:.96rem;
-      transition:.2s ease;
+      color:var(--heading);
+      padding:18px 0;
     }
 
-    nav a:hover{
-      color:var(--primary);
-    }
-
-    /* Hero */
-    .hero{
-      padding:72px 0 44px;
-    }
-
-    .hero-card{
-      background:linear-gradient(135deg, rgba(255,255,255,.96), rgba(247,250,255,.96));
-      border:1px solid var(--line);
-      border-radius:28px;
-      box-shadow:var(--shadow);
-      padding:42px;
-      display:grid;
-      grid-template-columns: 1.25fr .75fr;
+    .nav{
+      display:flex;
       gap:28px;
-      align-items:center;
-    }
-
-    .badge{
-      display:inline-block;
-      background:var(--primary-soft);
-      color:var(--primary);
-      padding:8px 14px;
-      border-radius:999px;
-      font-weight:800;
-      font-size:.9rem;
-      margin-bottom:16px;
-    }
-
-    .hero h2{
-      margin:0 0 14px;
-      font-size:clamp(2.4rem, 5vw, 4.2rem);
-      line-height:1.05;
-      letter-spacing:-.04em;
-    }
-
-    .hero p{
-      margin:0 0 16px;
-      color:var(--muted);
-      font-size:1.03rem;
-      max-width:70ch;
-    }
-
-    .hero-tags{
-      display:flex;
       flex-wrap:wrap;
-      gap:10px;
-      margin-top:20px;
     }
 
-    .hero-tag{
-      background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:999px;
-      padding:10px 14px;
-      font-weight:700;
-      color:#35506f;
-      font-size:.92rem;
+    .nav a{
+      color:var(--heading);
+      font-weight:500;
+      font-size:1rem;
     }
 
-    .hero-panel{
-      background:var(--surface);
+    .nav a:hover{
+      color:var(--accent);
+      text-decoration:none;
+    }
+
+    /* page layout */
+    .layout{
+      display:grid;
+      grid-template-columns:320px 1fr;
+      gap:34px;
+      padding:36px 0 50px;
+      align-items:start;
+    }
+
+    /* sidebar */
+    .profile-card{
+      background:var(--card);
       border:1px solid var(--line);
-      border-radius:22px;
-      padding:24px;
+      border-radius:var(--radius);
       box-shadow:var(--shadow);
+      padding:28px;
+      position:sticky;
+      top:94px;
     }
 
-    .hero-panel h3{
-      margin:0 0 14px;
-      font-size:1.15rem;
-      color:var(--primary);
+    .profile-photo{
+      width:180px;
+      height:180px;
+      margin:0 auto 22px;
+      border-radius:50%;
+      overflow:hidden;
+      border:4px solid #e6e6e6;
+      background:#ddd;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#777;
+      text-align:center;
+      padding:12px;
     }
 
-    .quick-list{
+    .profile-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .profile-name{
+      margin:0 0 10px;
+      font-size:1.9rem;
+      line-height:1.1;
+      color:var(--heading);
+    }
+
+    .profile-role{
+      color:var(--muted);
+      margin-bottom:8px;
+      font-size:1rem;
+    }
+
+    .profile-school{
+      color:var(--muted);
+      margin-bottom:20px;
+      font-size:1rem;
+    }
+
+    .sidebar-links{
       display:grid;
       gap:12px;
+      margin-top:18px;
     }
 
-    .quick-item{
-      padding:14px 16px;
-      border-radius:16px;
-      background:var(--surface-soft);
+    .sidebar-link{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:var(--text);
+      font-size:1rem;
+    }
+
+    .cv-button{
+      display:inline-block;
+      margin-top:22px;
+      padding:12px 18px;
+      border-radius:999px;
+      background:var(--accent);
+      color:#fff;
+      font-weight:700;
+    }
+
+    .cv-button:hover{
+      text-decoration:none;
+      opacity:.92;
+    }
+
+    /* content area */
+    .content{
+      display:grid;
+      gap:24px;
+    }
+
+    .section{
+      background:var(--card);
       border:1px solid var(--line);
-    }
-
-    .quick-item strong{
-      display:block;
-      margin-bottom:4px;
-      font-size:.96rem;
-    }
-
-    .quick-item span,
-    .quick-item a{
-      color:var(--muted);
-      font-size:.95rem;
-      word-break:break-word;
-    }
-
-    /* Sections */
-    section.section{
-      padding:26px 0 34px;
-    }
-
-    .section-card{
-      background:rgba(255,255,255,.92);
-      border:1px solid var(--line);
-      border-radius:26px;
+      border-radius:var(--radius);
       box-shadow:var(--shadow);
-      padding:34px;
+      padding:28px 30px;
     }
 
-    .section-head{
-      margin-bottom:24px;
-    }
-
-    .section-head h2{
-      margin:0 0 8px;
+    .section h2{
+      margin:0 0 14px;
       font-size:2rem;
-      color:var(--primary);
-      letter-spacing:-.02em;
+      color:var(--heading);
     }
 
-    .section-head p{
+    .section p{
+      margin:0 0 14px;
+      font-size:1.05rem;
+    }
+
+    .section ul{
       margin:0;
-      color:var(--muted);
+      padding-left:24px;
     }
 
-    /* About / Bio */
-    .bio-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
+    .section li{
+      margin:10px 0;
+      font-size:1.02rem;
     }
 
-    .info-box{
-      background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:22px;
-    }
-
-    .info-box h3{
-      margin:0 0 10px;
-      font-size:1.15rem;
-    }
-
-    .info-box p,
-    .info-box li{
-      color:var(--muted);
-    }
-
-    .info-box ul{
-      margin:0;
-      padding-left:20px;
-    }
-
-    /* Accordion */
-    .accordion{
-      display:grid;
-      gap:14px;
+    .highlight-title{
+      font-size:1.45rem;
+      font-weight:700;
+      color:var(--heading);
+      margin-bottom:12px;
     }
 
     details{
-      background:var(--surface);
       border:1px solid var(--line);
-      border-radius:18px;
+      border-radius:14px;
+      margin-bottom:14px;
       overflow:hidden;
+      background:#fcfcfc;
     }
 
     summary{
-      list-style:none;
       cursor:pointer;
-      padding:18px 20px;
-      font-weight:800;
-      font-size:1.03rem;
-      color:var(--text);
+      padding:16px 18px;
+      font-weight:700;
+      color:var(--heading);
+      font-size:1.05rem;
+      background:#fafafa;
+      list-style:none;
       position:relative;
-      background:linear-gradient(180deg, #ffffff, #fbfdff);
     }
 
-    summary::-webkit-details-marker{display:none}
+    summary::-webkit-details-marker{
+      display:none;
+    }
 
     summary::after{
       content:"+";
       position:absolute;
-      right:20px;
+      right:18px;
       top:50%;
       transform:translateY(-50%);
-      font-size:1.4rem;
-      color:var(--primary);
+      font-size:1.35rem;
+      color:var(--accent);
       font-weight:700;
     }
 
@@ -296,507 +254,281 @@
       content:"−";
     }
 
-    .details-content{
-      padding:0 20px 20px;
+    .details-body{
+      padding:8px 18px 18px;
       border-top:1px solid var(--line);
-      background:var(--surface-soft);
     }
 
     .entry{
-      padding:16px 0;
-      border-bottom:1px solid rgba(217,227,240,.9);
+      padding:12px 0;
+      border-bottom:1px solid #ececec;
     }
 
     .entry:last-child{
       border-bottom:none;
-      padding-bottom:0;
     }
 
-    .entry h4{
-      margin:0 0 6px;
-      font-size:1rem;
-      color:var(--text);
+    .entry strong{
+      display:block;
+      margin-bottom:4px;
+      color:var(--heading);
     }
 
-    .entry .meta{
-      color:var(--primary);
-      font-weight:700;
-      font-size:.95rem;
-      margin-bottom:8px;
-    }
-
-    .entry p,
-    .entry li{
-      margin:0;
+    .muted{
       color:var(--muted);
     }
 
-    .entry ul{
-      margin:8px 0 0;
-      padding-left:18px;
-    }
-
-    /* Education, Contact, Volunteer */
-    .card-grid{
+    .contact-grid{
       display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:18px;
-    }
-
-    .mini-card{
-      background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:22px;
-    }
-
-    .mini-card h3{
-      margin:0 0 8px;
-      color:var(--text);
-      font-size:1.08rem;
-    }
-
-    .mini-card p,
-    .mini-card a{
-      margin:0;
-      color:var(--muted);
-      word-break:break-word;
-    }
-
-    footer{
-      padding:28px 0 42px;
-      color:var(--muted);
-    }
-
-    .footer-card{
-      background:transparent;
-      display:flex;
-      justify-content:space-between;
+      grid-template-columns:1fr 1fr;
       gap:16px;
-      flex-wrap:wrap;
-      border-top:1px solid var(--line);
-      padding-top:18px;
     }
 
-    @media (max-width: 980px){
-      .hero-card,
-      .bio-grid,
-      .card-grid{
+    .mini-box{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:16px;
+      background:#fafafa;
+    }
+
+    .mini-box strong{
+      display:block;
+      margin-bottom:8px;
+      color:var(--heading);
+    }
+
+    @media (max-width:980px){
+      .layout{
         grid-template-columns:1fr;
       }
+
+      .profile-card{
+        position:static;
+      }
     }
 
-    @media (max-width: 760px){
-      .hero-card,
-      .section-card{
-        padding:24px;
+    @media (max-width:700px){
+      .section{
+        padding:22px;
       }
 
-      .hero{
-        padding-top:42px;
+      .profile-name{
+        font-size:1.6rem;
       }
 
-      nav{
-        gap:12px;
+      .contact-grid{
+        grid-template-columns:1fr;
       }
 
-      .hero h2{
-        font-size:2.5rem;
+      .nav{
+        gap:16px;
       }
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <div class="container nav-wrap">
-      <div class="brand">
-        <h1>Gift Aruchi NWATUZIE</h1>
-        <span>Secure & Trustworthy AI | Federated Learning | Privacy-Preserving ML</span>
-      </div>
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#bio">Bio</a>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="site-name">Gift Aruchi Nwatuzie</div>
+      <nav class="nav">
         <a href="#publications">Publications</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
         <a href="#volunteer">Volunteer</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <!-- HOME -->
-    <section id="home" class="hero">
-      <div class="container">
-        <div class="hero-card">
-          <div>
-            <div class="badge">Professional Academic Webpage</div>
-            <h2>Gift Aruchi Nwatuzie</h2>
-            <p>
-              Ph.D. Candidate in Computer Science at Kent State University with research interests in
-              secure and trustworthy artificial intelligence, federated learning, privacy-preserving AI,
-              ethical and responsible AI, and software engineering for intelligent systems.
-            </p>
-            <p>
-              My work focuses on building secure, scalable, interpretable, and privacy-conscious AI systems
-              for healthcare, cybersecurity, and distributed learning environments.
-            </p>
+  <main class="container layout">
+    <!-- LEFT SIDEBAR -->
+    <aside>
+      <div class="profile-card">
+        <div class="profile-photo">
+          <!-- Replace with your real image -->
+          <!-- <img src="gift-photo.jpg" alt="Gift Aruchi Nwatuzie" /> -->
+          Add Your Photo
+        </div>
 
-            <div class="hero-tags">
-              <span class="hero-tag">Trustworthy AI</span>
-              <span class="hero-tag">Federated Learning</span>
-              <span class="hero-tag">Responsible AI</span>
-              <span class="hero-tag">Privacy-Preserving ML</span>
-              <span class="hero-tag">Cybersecurity</span>
-              <span class="hero-tag">Healthcare AI</span>
+        <h1 class="profile-name">Gift Aruchi Nwatuzie</h1>
+        <div class="profile-role">Ph.D. Candidate in Computer Science</div>
+        <div class="profile-school">Kent State University, Ohio, USA</div>
+
+        <div class="sidebar-links">
+          <a class="sidebar-link" href="mailto:gnwatuzi@kent.edu">✉️ Email</a>
+          <a class="sidebar-link" href="https://linkedin.com/in/gift-nwatuzie-08696579" target="_blank">🔗 LinkedIn</a>
+          <a class="sidebar-link" href="https://researchgate.net/profile/Gift-Nwatuzie" target="_blank">📘 ResearchGate</a>
+          <a class="sidebar-link" href="https://github.com/" target="_blank">💻 GitHub</a>
+        </div>
+
+        <a class="cv-button" href="Gift_Nwatuzie_CV.pdf" target="_blank">Download CV</a>
+      </div>
+    </aside>
+
+    <!-- RIGHT CONTENT -->
+    <section class="content">
+      <!-- landing content, no Home/Bio menu item -->
+      <div class="section">
+        <h2>Biography</h2>
+        <p>
+          I am a Ph.D. Candidate in Computer Science at Kent State University. My research focuses on
+          secure and trustworthy artificial intelligence, federated learning, privacy-preserving machine learning,
+          fairness-aware AI, explainability, and secure software systems.
+        </p>
+        <p>
+          My goal is to design intelligent systems that are reliable, interpretable, privacy-conscious,
+          and suitable for sensitive domains such as healthcare, cybersecurity, and distributed computing environments.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="highlight-title">Research Interests</div>
+        <ul>
+          <li>Secure and Trustworthy Artificial Intelligence</li>
+          <li>Federated Learning and Privacy-Preserving Machine Learning</li>
+          <li>Fairness, Transparency, and Explainable AI</li>
+          <li>Cybersecurity and Intelligent Intrusion Detection</li>
+          <li>Healthcare AI and Multimodal Intelligent Systems</li>
+          <li>Software Engineering for Secure Intelligent Applications</li>
+        </ul>
+      </div>
+
+      <!-- publications only -->
+      <div class="section" id="publications">
+        <h2>Publications</h2>
+
+        <details open>
+          <summary>Doctoral Research Publications</summary>
+          <div class="details-body">
+            <div class="entry">
+              <strong>A Framework for Integration of Machine Vision with IoT Sensing</strong>
+              <div class="muted">Sensors, 2025</div>
+            </div>
+            <div class="entry">
+              <strong>Quantum-Enhanced Intrusion Detection: A Novel Hybrid Approach Using Quantum Deep Learning</strong>
+              <div class="muted">Conference Publication, 2025</div>
+            </div>
+            <div class="entry">
+              <strong>DRNMS: An Enhanced Deep Learning-Based System for Data Recovery and Anomaly Detection in Network Monitoring</strong>
+              <div class="muted">Springer Conference Proceedings, 2024</div>
             </div>
           </div>
+        </details>
 
-          <aside class="hero-panel">
-            <h3>Quick Profile</h3>
-            <div class="quick-list">
-              <div class="quick-item">
-                <strong>Affiliation</strong>
-                <span>Kent State University, Kent, Ohio, USA</span>
-              </div>
-              <div class="quick-item">
-                <strong>Email</strong>
-                <a href="mailto:gnwatuzi@kent.edu">gnwatuzi@kent.edu</a>
-              </div>
-              <div class="quick-item">
-                <strong>LinkedIn</strong>
-                <a href="https://linkedin.com/in/gift-nwatuzie-08696579" target="_blank">linkedin.com/in/gift-nwatuzie-08696579</a>
-              </div>
-              <div class="quick-item">
-                <strong>ResearchGate</strong>
-                <a href="https://researchgate.net/profile/Gift-Nwatuzie" target="_blank">researchgate.net/profile/Gift-Nwatuzie</a>
-              </div>
+        <details>
+          <summary>BSc and MSc Publications</summary>
+          <div class="details-body">
+            <div class="entry">
+              <strong>Adaptive Federated Learning for Secure and Efficient Edge Intelligence in Mobile Computing</strong>
             </div>
-          </aside>
+            <div class="entry">
+              <strong>Blockchain-Enabled Federated Learning for Trustworthy Multi-Agent Systems</strong>
+            </div>
+            <div class="entry">
+              <strong>Enhanced Intrusion Detection System with Machine Learning Models and Class Imbalance Optimization</strong>
+            </div>
+            <div class="entry">
+              <strong>Android Device File Encryption and Decryption System</strong>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- experience only -->
+      <div class="section" id="experience">
+        <h2>Experience</h2>
+
+        <details open>
+          <summary>Doctoral Research Experiences</summary>
+          <div class="details-body">
+            <div class="entry"><strong>Federated Learning for Healthcare Secure Data Sharing</strong></div>
+            <div class="entry"><strong>FairAudit: A Causal Explanation Framework for Diagnosing and Mitigating Intersectional Bias</strong></div>
+            <div class="entry"><strong>Zero-Knowledge Proofs for Trustless Data Provenance in Multi-Modal AI Pipelines</strong></div>
+            <div class="entry"><strong>Quantum-Resilient Federated Learning Research</strong></div>
+          </div>
+        </details>
+
+        <details>
+          <summary>Teaching and Mentoring Experiences</summary>
+          <div class="details-body">
+            <div class="entry">
+              <strong>Graduate Teaching Assistant — Kent State University</strong>
+              <div class="muted">January 2022 – Present</div>
+            </div>
+            <div class="entry">
+              <strong>Student Mentoring in Programming and Computer Science Labs</strong>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>Professional Experiences</summary>
+          <div class="details-body">
+            <div class="entry">
+              <strong>Graduate Hourly Employee Coordinator — Kent State University</strong>
+            </div>
+            <div class="entry">
+              <strong>Software Engineering Fellow — Coding Expert Bootcamp</strong>
+            </div>
+            <div class="entry">
+              <strong>Software Engineer — Tech Nova Solutions</strong>
+            </div>
+            <div class="entry">
+              <strong>Software Engineer — Civil Service Commission</strong>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- education only -->
+      <div class="section" id="education">
+        <h2>Education</h2>
+        <div class="entry">
+          <strong>Ph.D. in Computer Science</strong>
+          <div class="muted">Kent State University, Expected May 2026</div>
+        </div>
+        <div class="entry">
+          <strong>M.Sc. in Computer Systems Engineering</strong>
+          <div class="muted">University of East London, 2019</div>
+        </div>
+        <div class="entry">
+          <strong>B.Sc. in Software Engineering</strong>
+          <div class="muted">University of East London, 2018</div>
         </div>
       </div>
-    </section>
 
-    <!-- BIO -->
-    <section id="bio" class="section">
-      <div class="container">
-        <div class="section-card">
-          <div class="section-head">
-            <h2>Bio</h2>
-            <p>Academic profile and research summary.</p>
-          </div>
-
-          <div class="bio-grid">
-            <div class="info-box">
-              <h3>Professional Biography</h3>
-              <p>
-                I am a Ph.D. Candidate in Computer Science at Kent State University. My academic and research work
-                centers on secure and trustworthy AI systems, with a strong emphasis on federated learning,
-                privacy-preserving machine learning, ethical AI, fairness, transparency, and explainability.
-              </p>
-              <p>
-                I am particularly interested in designing reliable intelligent systems that can operate responsibly
-                in sensitive and distributed environments such as healthcare, cybersecurity, and edge-enabled systems.
-              </p>
-            </div>
-
-            <div class="info-box">
-              <h3>Research Interests</h3>
-              <ul>
-                <li>Artificial Intelligence and Machine Learning</li>
-                <li>Federated Learning and Privacy-Preserving AI</li>
-                <li>Ethical and Responsible AI</li>
-                <li>Fairness, Transparency, and Explainability</li>
-                <li>Software Engineering for AI Systems</li>
-                <li>Quantum- and Edge-Enhanced Learning for Cybersecurity</li>
-              </ul>
-            </div>
-          </div>
+      <!-- volunteer only -->
+      <div class="section" id="volunteer">
+        <h2>Volunteer</h2>
+        <div class="entry">
+          <strong>Lead Software Architect & Ethical AI Advisor — Techvision Volunteer</strong>
+          <div class="muted">January 2021 – December 2022</div>
         </div>
       </div>
-    </section>
 
-    <!-- PUBLICATIONS -->
-    <section id="publications" class="section">
-      <div class="container">
-        <div class="section-card">
-          <div class="section-head">
-            <h2>Publications</h2>
-            <p>Organized by doctoral and earlier academic research outputs.</p>
+      <!-- contact only -->
+      <div class="section" id="contact">
+        <h2>Contact</h2>
+        <div class="contact-grid">
+          <div class="mini-box">
+            <strong>Email</strong>
+            <a href="mailto:gnwatuzi@kent.edu">gnwatuzi@kent.edu</a>
           </div>
-
-          <div class="accordion">
-            <details open>
-              <summary>Doctoral Research Publications</summary>
-              <div class="details-content">
-                <div class="entry">
-                  <h4>A Framework for Integration of Machine Vision with IoT Sensing</h4>
-                  <div class="meta">Sensors, 2025</div>
-                </div>
-
-                <div class="entry">
-                  <h4>Quantum-Enhanced Intrusion Detection: A Novel Hybrid Approach Using Quantum Deep Learning</h4>
-                  <div class="meta">Conference Publication, 2025</div>
-                </div>
-
-                <div class="entry">
-                  <h4>DRNMS: An Enhanced Deep Learning-Based System for Data Recovery and Anomaly Detection in Network Monitoring</h4>
-                  <div class="meta">Springer Conference Proceedings, 2024</div>
-                </div>
-              </div>
-            </details>
-
-            <details>
-              <summary>BSc and MSc Research Publications</summary>
-              <div class="details-content">
-                <div class="entry">
-                  <h4>Enhancing Cloud Data Security Using a Hybrid Encryption Framework Integrating AES, DES, and RC6 with File Splitting and Steganographic Key Management</h4>
-                  <div class="meta">International Journal of Innovative Science and Research Technology, 2025</div>
-                </div>
-
-                <div class="entry">
-                  <h4>Design and Evaluation of a User-Centric Cryptographic Model Leveraging Hybrid Algorithms for Secure Cloud Storage and Data Integrity</h4>
-                  <div class="meta">American Journal of Innovation in Science and Engineering, 2025</div>
-                </div>
-
-                <div class="entry">
-                  <h4>Digital Twin Technology in Software Engineering: Simulation and Testing in Virtual Environments</h4>
-                  <div class="meta">World Journal of Engineering Research, 2025</div>
-                </div>
-
-                <div class="entry">
-                  <h4>Human-Centered Software Engineering: Enhancing Developer Productivity and Well-Being</h4>
-                  <div class="meta">World Journal of Engineering Research, 2025</div>
-                </div>
-
-                <div class="entry">
-                  <h4>Blockchain-Based Secure Software Engineering Practices</h4>
-                  <div class="meta">International Journal for Research in Applied Science and Engineering Technology, 2025</div>
-                </div>
-
-                <div class="entry">
-                  <h4>Automated Software Refactoring Utilizing Machine Learning for Extensive Systems</h4>
-                  <div class="meta">International Journal for Research in Applied Science and Engineering Technology, 2025</div>
-                </div>
-
-                <div class="entry">
-                  <h4>Adaptive Federated Learning for Secure and Efficient Edge Intelligence in Mobile Computing</h4>
-                  <div class="meta">WJERT, 2022</div>
-                </div>
-
-                <div class="entry">
-                  <h4>Blockchain-Enabled Federated Learning for Trustworthy Multi-Agent Systems</h4>
-                  <div class="meta">WJERT, 2021</div>
-                </div>
-
-                <div class="entry">
-                  <h4>Enhanced Intrusion Detection System with Machine Learning Models and Class Imbalance Optimization</h4>
-                  <div class="meta">WJERT, 2019</div>
-                </div>
-
-                <div class="entry">
-                  <h4>Android Device File Encryption and Decryption System</h4>
-                  <div class="meta">International Journal of Information System and Engineering, 2019</div>
-                </div>
-              </div>
-            </details>
+          <div class="mini-box">
+            <strong>Phone</strong>
+            <div>+1 (206) 291-3094</div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section">
-      <div class="container">
-        <div class="section-card">
-          <div class="section-head">
-            <h2>Experience</h2>
-            <p>Research, teaching, mentoring, and professional experience.</p>
+          <div class="mini-box">
+            <strong>LinkedIn</strong>
+            <a href="https://linkedin.com/in/gift-nwatuzie-08696579" target="_blank">View Profile</a>
           </div>
-
-          <div class="accordion">
-            <details open>
-              <summary>Doctoral Research Experiences</summary>
-              <div class="details-content">
-                <div class="entry"><h4>Federated Learning for Healthcare Secure Data Sharing</h4></div>
-                <div class="entry"><h4>Quantum-Resilient Federated Learning via Homomorphic-Adaptive Secure Aggregation in Decentralized Environments</h4></div>
-                <div class="entry"><h4>Zero-Knowledge Proofs for Trustless Data Provenance in Multi-Modal AI Pipelines</h4></div>
-                <div class="entry"><h4>Activity of Daily Living (ADL) Recognition using Kinect Data</h4></div>
-                <div class="entry"><h4>A Framework for Integration of Machine Vision with IoT Sensing</h4></div>
-                <div class="entry"><h4>Quantum-Enhanced Intrusion Detection: A Novel Hybrid Approach Using Quantum Deep Learning</h4></div>
-                <div class="entry"><h4>DRNMS: An Enhanced Deep Learning-Based System for Data Recovery and Anomaly Detection in Network Monitoring</h4></div>
-                <div class="entry"><h4>FairAudit: A Causal Explanation Framework for Diagnosing and Mitigating Intersectional Bias</h4></div>
-              </div>
-            </details>
-
-            <details>
-              <summary>Teaching and Mentoring Experiences</summary>
-              <div class="details-content">
-                <div class="entry">
-                  <h4>Graduate Teaching Assistant — Kent State University</h4>
-                  <div class="meta">January 2022 – Present</div>
-                  <ul>
-                    <li>Teach and grade CS1 labs.</li>
-                    <li>Mentor students in programming and algorithmic thinking.</li>
-                    <li>Develop grading rubrics for fairness and transparency.</li>
-                    <li>Support student success through office hours and email guidance.</li>
-                  </ul>
-                </div>
-
-                <div class="entry">
-                  <h4>Course Support Areas</h4>
-                  <ul>
-                    <li>CS1 (Introductory Programming)</li>
-                    <li>Object-Oriented Programming</li>
-                    <li>Procedural Programming</li>
-                    <li>Lab instruction, mentoring, and assessment support</li>
-                  </ul>
-                </div>
-              </div>
-            </details>
-
-            <details>
-              <summary>Professional Experiences</summary>
-              <div class="details-content">
-                <div class="entry">
-                  <h4>Graduate Hourly Employee Coordinator — Kent State University</h4>
-                  <div class="meta">2024 – Present</div>
-                  <p>Oversee and support student employees while facilitating operational efficiency and communication.</p>
-                </div>
-
-                <div class="entry">
-                  <h4>Software Engineering Fellow — Coding Expert Bootcamp</h4>
-                  <div class="meta">March 2022 – September 2022</div>
-                  <p>Led design of a bias-aware recommendation engine using explainable AI and ethical constraints while mentoring junior fellows.</p>
-                </div>
-
-                <div class="entry">
-                  <h4>Software Engineer — Trendsville / Pack Media Ltd</h4>
-                  <div class="meta">January 2020 – February 2021</div>
-                  <p>Built secure and scalable backend systems and integrated bias detection and explainability into internal tools.</p>
-                </div>
-
-                <div class="entry">
-                  <h4>Software Engineer — Tech Nova Solutions</h4>
-                  <div class="meta">May 2019 – Present</div>
-                  <p>Developed and maintained distributed backend features and supported CI/CD and performance optimization.</p>
-                </div>
-
-                <div class="entry">
-                  <h4>Software Engineer — Civil Service Commission</h4>
-                  <div class="meta">January 2016 – December 2019</div>
-                  <p>Automated public-sector workflows and improved reliability, security, and compliance.</p>
-                </div>
-              </div>
-            </details>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- EDUCATION -->
-    <section id="education" class="section">
-      <div class="container">
-        <div class="section-card">
-          <div class="section-head">
-            <h2>Education</h2>
-            <p>Academic qualifications and degree information.</p>
-          </div>
-
-          <div class="card-grid">
-            <div class="mini-card">
-              <h3>Ph.D. in Computer Science</h3>
-              <p>Kent State University, Kent, Ohio</p>
-              <p>Expected May 2026</p>
-              <p>GPA: 3.71 / 4.00</p>
-            </div>
-
-            <div class="mini-card">
-              <h3>M.Sc. in Computer Systems Engineering</h3>
-              <p>University of East London, London, UK</p>
-              <p>2019</p>
-              <p>GPA: 3.89 / 4.00</p>
-            </div>
-
-            <div class="mini-card">
-              <h3>B.Sc. in Software Engineering</h3>
-              <p>University of East London, London, UK</p>
-              <p>2018</p>
-              <p>GPA: 3.62 / 4.00</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <div class="container">
-        <div class="section-card">
-          <div class="section-head">
-            <h2>Contact</h2>
-            <p>Professional contact and academic profile links.</p>
-          </div>
-
-          <div class="card-grid">
-            <div class="mini-card">
-              <h3>Email</h3>
-              <a href="mailto:giftluv178@gmail.com">giftluv178@gmail.com</a><br>
-              <a href="mailto:gnwatuzi@kent.edu">gnwatuzi@kent.edu</a>
-            </div>
-
-            <div class="mini-card">
-              <h3>Phone</h3>
-              <p>+1 (206) 291-3094</p>
-            </div>
-
-            <div class="mini-card">
-              <h3>LinkedIn</h3>
-              <a href="https://linkedin.com/in/gift-nwatuzie-08696579" target="_blank">linkedin.com/in/gift-nwatuzie-08696579</a>
-            </div>
-
-            <div class="mini-card">
-              <h3>ResearchGate</h3>
-              <a href="https://researchgate.net/profile/Gift-Nwatuzie" target="_blank">researchgate.net/profile/Gift-Nwatuzie</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- VOLUNTEER -->
-    <section id="volunteer" class="section">
-      <div class="container">
-        <div class="section-card">
-          <div class="section-head">
-            <h2>Volunteer</h2>
-            <p>Service, leadership, and community contribution.</p>
-          </div>
-
-          <div class="mini-card">
-            <h3>Lead Software Architect & Ethical AI Advisor — Techvision Volunteer</h3>
-            <p>January 2021 – December 2022</p>
-            <p>
-              Directed a mobile-first health data platform to improve rural data reliability and co-authored a
-              Responsible AI policy framework while delivering trainings on ethical AI and digital inclusivity.
-            </p>
+          <div class="mini-box">
+            <strong>ResearchGate</strong>
+            <a href="https://researchgate.net/profile/Gift-Nwatuzie" target="_blank">View Profile</a>
           </div>
         </div>
       </div>
     </section>
   </main>
-
-  <footer>
-    <div class="container footer-card">
-      <div>© <span id="year"></span> Gift Aruchi Nwatuzie</div>
-      <div>Professional academic website</div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
