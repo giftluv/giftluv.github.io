@@ -42,7 +42,6 @@
       margin:0 auto;
     }
 
-    /* top navigation */
     .topbar{
       background:#fff;
       border-bottom:1px solid var(--line);
@@ -69,22 +68,70 @@
 
     .nav{
       display:flex;
-      gap:28px;
+      gap:24px;
       flex-wrap:wrap;
+      align-items:center;
     }
 
-    .nav a{
+    .nav a,
+    .dropbtn{
       color:var(--heading);
       font-weight:500;
       font-size:1rem;
+      background:none;
+      border:none;
+      cursor:pointer;
+      font-family:inherit;
+      padding:0;
     }
 
-    .nav a:hover{
+    .nav a:hover,
+    .dropbtn:hover{
       color:var(--accent);
       text-decoration:none;
     }
 
-    /* page layout */
+    .dropdown{
+      position:relative;
+      display:inline-block;
+    }
+
+    .dropdown-content{
+      display:none;
+      position:absolute;
+      top:100%;
+      left:0;
+      min-width:280px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:12px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      z-index:2000;
+    }
+
+    .dropdown-content a{
+      display:block;
+      padding:12px 16px;
+      color:var(--text);
+      font-size:.97rem;
+      border-bottom:1px solid #efefef;
+    }
+
+    .dropdown-content a:last-child{
+      border-bottom:none;
+    }
+
+    .dropdown-content a:hover{
+      background:#f8f8f8;
+      color:var(--accent);
+      text-decoration:none;
+    }
+
+    .dropdown:hover .dropdown-content{
+      display:block;
+    }
+
     .layout{
       display:grid;
       grid-template-columns:320px 1fr;
@@ -93,7 +140,6 @@
       align-items:start;
     }
 
-    /* sidebar */
     .profile-card{
       background:var(--card);
       border:1px solid var(--line);
@@ -174,7 +220,6 @@
       opacity:.92;
     }
 
-    /* content area */
     .content{
       display:grid;
       gap:24px;
@@ -214,49 +259,6 @@
       font-weight:700;
       color:var(--heading);
       margin-bottom:12px;
-    }
-
-    details{
-      border:1px solid var(--line);
-      border-radius:14px;
-      margin-bottom:14px;
-      overflow:hidden;
-      background:#fcfcfc;
-    }
-
-    summary{
-      cursor:pointer;
-      padding:16px 18px;
-      font-weight:700;
-      color:var(--heading);
-      font-size:1.05rem;
-      background:#fafafa;
-      list-style:none;
-      position:relative;
-    }
-
-    summary::-webkit-details-marker{
-      display:none;
-    }
-
-    summary::after{
-      content:"+";
-      position:absolute;
-      right:18px;
-      top:50%;
-      transform:translateY(-50%);
-      font-size:1.35rem;
-      color:var(--accent);
-      font-weight:700;
-    }
-
-    details[open] summary::after{
-      content:"−";
-    }
-
-    .details-body{
-      padding:8px 18px 18px;
-      border-top:1px solid var(--line);
     }
 
     .entry{
@@ -323,6 +325,10 @@
       .nav{
         gap:16px;
       }
+
+      .dropdown-content{
+        min-width:220px;
+      }
     }
   </style>
 </head>
@@ -330,9 +336,25 @@
   <header class="topbar">
     <div class="container topbar-inner">
       <div class="site-name">Gift Aruchi Nwatuzie</div>
+
       <nav class="nav">
-        <a href="#publications">Publications</a>
-        <a href="#experience">Experience</a>
+        <div class="dropdown">
+          <button class="dropbtn">Publications</button>
+          <div class="dropdown-content">
+            <a href="#doctoral-publications">Doctoral Research Publications</a>
+            <a href="#bsc-msc-publications">BSc and MSc Publications</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropbtn">Experience</button>
+          <div class="dropdown-content">
+            <a href="#doctoral-experiences">Doctoral Research Experiences</a>
+            <a href="#teaching-mentoring">Teaching and Mentoring Experiences</a>
+            <a href="#professional-experiences">Professional Experiences</a>
+          </div>
+        </div>
+
         <a href="#education">Education</a>
         <a href="#volunteer">Volunteer</a>
         <a href="#contact">Contact</a>
@@ -341,7 +363,6 @@
   </header>
 
   <main class="container layout">
-    <!-- LEFT SIDEBAR -->
     <aside>
       <div class="profile-card">
         <div class="profile-photo">
@@ -355,19 +376,16 @@
         <div class="profile-school">Kent State University, Ohio, USA</div>
 
         <div class="sidebar-links">
-          <a class="sidebar-link" href="mailto:gnwatuzi@kent.edu">✉️ Email</a>
+          <a class="sidebar-link" href="mailto:gnwatuzi@kent.edu?subject=Message%20from%20your%20website">✉️ gnwatuzi@kent.edu</a>
           <a class="sidebar-link" href="https://linkedin.com/in/gift-nwatuzie-08696579" target="_blank">🔗 LinkedIn</a>
           <a class="sidebar-link" href="https://researchgate.net/profile/Gift-Nwatuzie" target="_blank">📘 ResearchGate</a>
-          <a class="sidebar-link" href="https://github.com/" target="_blank">💻 GitHub</a>
         </div>
 
         <a class="cv-button" href="Gift_Nwatuzie_CV.pdf" target="_blank">Download CV</a>
       </div>
     </aside>
 
-    <!-- RIGHT CONTENT -->
     <section class="content">
-      <!-- landing content, no Home/Bio menu item -->
       <div class="section">
         <h2>Biography</h2>
         <p>
@@ -393,94 +411,81 @@
         </ul>
       </div>
 
-      <!-- publications only -->
       <div class="section" id="publications">
         <h2>Publications</h2>
 
-        <details open>
-          <summary>Doctoral Research Publications</summary>
-          <div class="details-body">
-            <div class="entry">
-              <strong>A Framework for Integration of Machine Vision with IoT Sensing</strong>
-              <div class="muted">Sensors, 2025</div>
-            </div>
-            <div class="entry">
-              <strong>Quantum-Enhanced Intrusion Detection: A Novel Hybrid Approach Using Quantum Deep Learning</strong>
-              <div class="muted">Conference Publication, 2025</div>
-            </div>
-            <div class="entry">
-              <strong>DRNMS: An Enhanced Deep Learning-Based System for Data Recovery and Anomaly Detection in Network Monitoring</strong>
-              <div class="muted">Springer Conference Proceedings, 2024</div>
-            </div>
-          </div>
-        </details>
+        <div id="doctoral-publications" class="entry">
+          <strong>Doctoral Research Publications</strong>
+        </div>
+        <div class="entry">
+          <strong>A Framework for Integration of Machine Vision with IoT Sensing</strong>
+          <div class="muted">Sensors, 2025</div>
+        </div>
+        <div class="entry">
+          <strong>Quantum-Enhanced Intrusion Detection: A Novel Hybrid Approach Using Quantum Deep Learning</strong>
+          <div class="muted">Conference Publication, 2025</div>
+        </div>
+        <div class="entry">
+          <strong>DRNMS: An Enhanced Deep Learning-Based System for Data Recovery and Anomaly Detection in Network Monitoring</strong>
+          <div class="muted">Springer Conference Proceedings, 2024</div>
+        </div>
 
-        <details>
-          <summary>BSc and MSc Publications</summary>
-          <div class="details-body">
-            <div class="entry">
-              <strong>Adaptive Federated Learning for Secure and Efficient Edge Intelligence in Mobile Computing</strong>
-            </div>
-            <div class="entry">
-              <strong>Blockchain-Enabled Federated Learning for Trustworthy Multi-Agent Systems</strong>
-            </div>
-            <div class="entry">
-              <strong>Enhanced Intrusion Detection System with Machine Learning Models and Class Imbalance Optimization</strong>
-            </div>
-            <div class="entry">
-              <strong>Android Device File Encryption and Decryption System</strong>
-            </div>
-          </div>
-        </details>
+        <div id="bsc-msc-publications" class="entry" style="margin-top:16px;">
+          <strong>BSc and MSc Publications</strong>
+        </div>
+        <div class="entry">
+          <strong>Adaptive Federated Learning for Secure and Efficient Edge Intelligence in Mobile Computing</strong>
+        </div>
+        <div class="entry">
+          <strong>Blockchain-Enabled Federated Learning for Trustworthy Multi-Agent Systems</strong>
+        </div>
+        <div class="entry">
+          <strong>Enhanced Intrusion Detection System with Machine Learning Models and Class Imbalance Optimization</strong>
+        </div>
+        <div class="entry">
+          <strong>Android Device File Encryption and Decryption System</strong>
+        </div>
       </div>
 
-      <!-- experience only -->
       <div class="section" id="experience">
         <h2>Experience</h2>
 
-        <details open>
-          <summary>Doctoral Research Experiences</summary>
-          <div class="details-body">
-            <div class="entry"><strong>Federated Learning for Healthcare Secure Data Sharing</strong></div>
-            <div class="entry"><strong>FairAudit: A Causal Explanation Framework for Diagnosing and Mitigating Intersectional Bias</strong></div>
-            <div class="entry"><strong>Zero-Knowledge Proofs for Trustless Data Provenance in Multi-Modal AI Pipelines</strong></div>
-            <div class="entry"><strong>Quantum-Resilient Federated Learning Research</strong></div>
-          </div>
-        </details>
+        <div id="doctoral-experiences" class="entry">
+          <strong>Doctoral Research Experiences</strong>
+        </div>
+        <div class="entry"><strong>Federated Learning for Healthcare Secure Data Sharing</strong></div>
+        <div class="entry"><strong>FairAudit: A Causal Explanation Framework for Diagnosing and Mitigating Intersectional Bias</strong></div>
+        <div class="entry"><strong>Zero-Knowledge Proofs for Trustless Data Provenance in Multi-Modal AI Pipelines</strong></div>
+        <div class="entry"><strong>Quantum-Resilient Federated Learning Research</strong></div>
 
-        <details>
-          <summary>Teaching and Mentoring Experiences</summary>
-          <div class="details-body">
-            <div class="entry">
-              <strong>Graduate Teaching Assistant — Kent State University</strong>
-              <div class="muted">January 2022 – Present</div>
-            </div>
-            <div class="entry">
-              <strong>Student Mentoring in Programming and Computer Science Labs</strong>
-            </div>
-          </div>
-        </details>
+        <div id="teaching-mentoring" class="entry" style="margin-top:16px;">
+          <strong>Teaching and Mentoring Experiences</strong>
+        </div>
+        <div class="entry">
+          <strong>Graduate Teaching Assistant — Kent State University</strong>
+          <div class="muted">January 2022 – Present</div>
+        </div>
+        <div class="entry">
+          <strong>Student Mentoring in Programming and Computer Science Labs</strong>
+        </div>
 
-        <details>
-          <summary>Professional Experiences</summary>
-          <div class="details-body">
-            <div class="entry">
-              <strong>Graduate Hourly Employee Coordinator — Kent State University</strong>
-            </div>
-            <div class="entry">
-              <strong>Software Engineering Fellow — Coding Expert Bootcamp</strong>
-            </div>
-            <div class="entry">
-              <strong>Software Engineer — Tech Nova Solutions</strong>
-            </div>
-            <div class="entry">
-              <strong>Software Engineer — Civil Service Commission</strong>
-            </div>
-          </div>
-        </details>
+        <div id="professional-experiences" class="entry" style="margin-top:16px;">
+          <strong>Professional Experiences</strong>
+        </div>
+        <div class="entry">
+          <strong>Graduate Hourly Employee Coordinator — Kent State University</strong>
+        </div>
+        <div class="entry">
+          <strong>Software Engineering Fellow — Coding Expert Bootcamp</strong>
+        </div>
+        <div class="entry">
+          <strong>Software Engineer — Tech Nova Solutions</strong>
+        </div>
+        <div class="entry">
+          <strong>Software Engineer — Civil Service Commission</strong>
+        </div>
       </div>
 
-      <!-- education only -->
       <div class="section" id="education">
         <h2>Education</h2>
         <div class="entry">
@@ -497,7 +502,6 @@
         </div>
       </div>
 
-      <!-- volunteer only -->
       <div class="section" id="volunteer">
         <h2>Volunteer</h2>
         <div class="entry">
@@ -506,13 +510,12 @@
         </div>
       </div>
 
-      <!-- contact only -->
       <div class="section" id="contact">
         <h2>Contact</h2>
         <div class="contact-grid">
           <div class="mini-box">
             <strong>Email</strong>
-            <a href="mailto:gnwatuzi@kent.edu">gnwatuzi@kent.edu</a>
+            <a href="mailto:gnwatuzi@kent.edu?subject=Message%20from%20your%20website">gnwatuzi@kent.edu</a>
           </div>
           <div class="mini-box">
             <strong>Phone</strong>
@@ -532,4 +535,3 @@
   </main>
 </body>
 </html>
-
